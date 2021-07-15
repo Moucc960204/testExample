@@ -1,6 +1,9 @@
-import org.slf4j.Logger;
+package com.test.socket;
 
-import java.io.*;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.io.UnsupportedEncodingException;
 import java.net.Socket;
 
 /**

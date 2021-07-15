@@ -1,3 +1,5 @@
+package com.test.socket;
+
 import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
