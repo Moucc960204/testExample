@@ -1,7 +1,4 @@
-import java.io.DataOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
+import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
 
@@ -19,9 +16,13 @@ public class SocketServerTest {
             ServerSocket serverSocket = new ServerSocket(1314);
             Socket socket = serverSocket.accept();
             InputStream inputStream = socket.getInputStream();
-            byte[] buf = new byte[1024];
+            InputStreamReader inputStreamReader = new InputStreamReader(inputStream, "GBK");
+            BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
+            String returnInfo = bufferedReader.readLine();
+            System.out.println("服务器端返回数据为：" + returnInfo);
+            /*byte[] buf = new byte[1024];
             int length = inputStream.read(buf);
-            System.out.println("Server:收到客户端的响应====>" + new String(buf, 0, length));
+            System.out.println("Server:收到客户端的响应====>" + new String(buf, 0, length));*/
 
             //定义发送字符串，即客户端收到的信息
             String sendString = "hello！我是服务端...";
